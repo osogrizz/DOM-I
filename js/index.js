@@ -59,3 +59,50 @@ let headerCTA = document.querySelector('.cta-text');
 // console.log(headerCTA.firstElementChild);
 headerCTA.firstElementChild.textContent = siteContent.cta.h1
 headerCTA.lastElementChild.textContent = siteContent.cta.button
+
+// main-content
+
+// middle-img
+let middleImg = document.querySelector('#middle-img');
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// upper-text
+let upperText = document.querySelector('.top-content');
+let upperText1 = upperText.firstElementChild;
+upperText1.firstElementChild.textContent = siteContent["main-content"]["features-h4"];
+upperText1.lastElementChild.textContent = siteContent["main-content"]["features-content"];
+
+upperText2 = upperText.lastElementChild;
+upperText2.firstElementChild.textContent = siteContent["main-content"]["about-h4"];
+upperText2.lastElementChild.textContent = siteContent["main-content"]["about-content"];
+
+// bottom-text
+let lowerText = document.querySelector(".bottom-content");
+let lowerText1 = lowerText.firstElementChild;
+lowerText1.firstElementChild.textContent = siteContent["main-content"]["services-h4"];
+lowerText1.lastElementChild.textContent = siteContent["main-content"]["services-content"];
+
+let lowerText2 = lowerText.firstElementChild.nextElementSibling;
+console.log(lowerText2);
+lowerText2.firstElementChild.textContent = siteContent["main-content"]["product-h4"];
+lowerText2.lastElementChild.textContent = siteContent["main-content"]["product-content"];
+
+let lowerText3 = lowerText.lastElementChild;
+console.log(lowerText3);
+lowerText3.firstElementChild.textContent = siteContent["main-content"]["vision-h4"];
+lowerText3.lastElementChild.textContent = siteContent["main-content"]["vision-content"];
+
+// contact
+
+let contactText = document.querySelector('.contact');
+console.log(contactText)
+contactText.firstElementChild.textContent = siteContent["contact"]["contact-h4"];
+contactText.firstElementChild.nextElementSibling.textContent = siteContent["contact"]["address"];
+let phone = contactText.firstElementChild.nextElementSibling;
+phone.nextElementSibling.textContent = siteContent["contact"]["phone"];
+contactText.lastElementChild.textContent = siteContent["contact"]["email"];
+
+// fontLanguageOverride: 
+let footer = document.querySelector('footer');
+console.log(footer);
+footer.firstElementChild.textContent = siteContent["footer"]["copyright"];
