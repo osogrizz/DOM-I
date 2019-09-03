@@ -43,12 +43,21 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // nav links 
 let navigation = document.querySelectorAll('a');
-// console.log(navigation);
-// console.log(siteContent.nav);
 for (let i = 0; i < navigation.length; i++) {
-  // console.log(navigation[i]);
   navigation[i].textContent = siteContent.nav[`nav-item-${[i]}`];
+  navigation[i].style.color = "green";
 }
+let first = document.createElement('a');
+first.style.color = "green";
+first.textContent = "Alpha"
+navigation[0].prepend(first)
+
+let last = document.createElement('a');
+last.style.color = "green";
+last.textContent = "Omega";
+
+let nav = document.querySelector('nav');
+nav.appendChild(last)
 
 // header-img
 let headerImg = document.getElementById('cta-img');
@@ -83,19 +92,16 @@ lowerText1.firstElementChild.textContent = siteContent["main-content"]["services
 lowerText1.lastElementChild.textContent = siteContent["main-content"]["services-content"];
 
 let lowerText2 = lowerText.firstElementChild.nextElementSibling;
-console.log(lowerText2);
 lowerText2.firstElementChild.textContent = siteContent["main-content"]["product-h4"];
 lowerText2.lastElementChild.textContent = siteContent["main-content"]["product-content"];
 
 let lowerText3 = lowerText.lastElementChild;
-console.log(lowerText3);
 lowerText3.firstElementChild.textContent = siteContent["main-content"]["vision-h4"];
 lowerText3.lastElementChild.textContent = siteContent["main-content"]["vision-content"];
 
 // contact
 
 let contactText = document.querySelector('.contact');
-console.log(contactText)
 contactText.firstElementChild.textContent = siteContent["contact"]["contact-h4"];
 contactText.firstElementChild.nextElementSibling.textContent = siteContent["contact"]["address"];
 let phone = contactText.firstElementChild.nextElementSibling;
@@ -104,5 +110,4 @@ contactText.lastElementChild.textContent = siteContent["contact"]["email"];
 
 // fontLanguageOverride: 
 let footer = document.querySelector('footer');
-console.log(footer);
 footer.firstElementChild.textContent = siteContent["footer"]["copyright"];
