@@ -39,7 +39,6 @@ let secTens = document.getElementById('secondTens');
 
 ms = 0;
 
-
 const startBtn = document.createElement('button');
 startBtn.textContent = `start`;
 
@@ -55,24 +54,27 @@ resetBtn.textContent = `reset`;
 
 clock.appendChild(resetBtn);
 
-
-
-
 startBtn.addEventListener('click', event => {
-  // console.log(timer);
   let interval = setInterval(() => {
     ms++
     msTens.textContent = Math.floor(ms % 10);
     msHundreds.textContent = Math.floor(ms * .1) % 10;
     secOnes.textContent = Math.floor(ms * .01) % 10;
     secTens.textContent = Math.floor(ms * .001) % 10;
-  }, 10);   
+  }, 10);  
+
+  startBtn.disabled = true;
+  startBtn.classList.add('disabled');
+
   stopBtn.addEventListener('click', event => {
     clearInterval(interval);
-    console.log(stop)
+    startBtn.disabled = false;
+    startBtn.classList.remove('disabled');
   })
   
   resetBtn.addEventListener('click', event => {
+    startBtn.disabled = false;
+    startBtn.classList.remove('disabled');
     clearInterval(interval);
     msTens.textContent = 0
     msHundreds.textContent = 0 
