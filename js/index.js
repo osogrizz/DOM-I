@@ -100,7 +100,6 @@ lowerText3.firstElementChild.textContent = siteContent["main-content"]["vision-h
 lowerText3.lastElementChild.textContent = siteContent["main-content"]["vision-content"];
 
 // contact
-
 let contactText = document.querySelector('.contact');
 contactText.firstElementChild.textContent = siteContent["contact"]["contact-h4"];
 contactText.firstElementChild.nextElementSibling.textContent = siteContent["contact"]["address"];
