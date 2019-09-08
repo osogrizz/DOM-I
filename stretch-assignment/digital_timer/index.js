@@ -75,11 +75,14 @@ startBtn.addEventListener('click', event => {
   resetBtn.addEventListener('click', event => {
     startBtn.disabled = false;
     startBtn.classList.remove('disabled');
+
     clearInterval(interval);
-    msTens.textContent = 0
-    msHundreds.textContent = 0 
-    secOnes.textContent = 0
-    secTens.textContent = 0
+
+    msTens.textContent = Math.floor(0);
+    msHundreds.textContent = Math.floor(0); 
+    secOnes.textContent = Math.floor(0);
+    secTens.textContent = Math.floor(0);
+    ms = 0;
   })
 });
 
